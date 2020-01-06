@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Plan;
+
 class BillingController extends Controller
 {
     public function index()
     {
-        return view('billing.index');
+        $plans = Plan::all();
+        return view('billing.index', compact('plans'));
     }
 }

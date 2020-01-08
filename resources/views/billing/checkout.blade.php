@@ -10,12 +10,16 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
+                            @if (session('error'))
+                                <div class="alert alert-danger">{{ session('error') }}</div>
+                            @endif
+
                             <form action="{{ route('checkout.process') }}" method="POST" id="checkout-form">
                                 @csrf
                                 <input type="hidden" name="billing_plan_id" value="{{ $plan->id }}" />
                                 <input type="hidden" name="payment-method" id="payment-method" value="" />
 
-                                <input id="card-holder-name" type="text" placeholder="Card holder name">
+                                <input id="card-holder-name" type="text" placeholder="Card holder name" class="form-control">
 
                                 <!-- Stripe Elements Placeholder -->
                                 <div id="card-element"></div>

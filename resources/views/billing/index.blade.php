@@ -22,8 +22,16 @@
                                 <h3>{{ $plan->name }}</h3>
                                 <b>${{ number_format($plan->price / 100, 2) }} / month</b>
                                 <hr />
-                                @if ($plan->stripe_plan_id == $currentPlan)
+                                @if ($plan->stripe_plan_id == $currentPlan->stripe_plan)
                                     Your current plan.
+                                    <br />
+                                    @if (!$currentPlan->onGracePeriod())
+                                        <a href="{{ route('cancel') }}" class="btn btn-danger" onclick="return confirm('Are you sure?')">Cancel plan</a>
+                                    @else
+                                        Your subscription will end on {{ $currentPlan->ends_at->toDateString() }}
+                                        <br /><br />
+                                        <a href="{{ route('resume') }}" class="btn btn-primary">Resume subscription</a>
+                                    @endif
                                 @else
                                     <a href="{{ route('checkout', $plan->id) }}" class="btn btn-primary">Subscribe to {{ $plan->name }}</a>
                                 @endif

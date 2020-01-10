@@ -10,8 +10,14 @@ class BillingController extends Controller
     {
         $plans = Plan::all();
         $currentPlan = auth()->user()->subscription('default') ?? NULL;
-        $paymentMethods = auth()->user()->paymentMethods();
-        $defaultPaymentMethod = auth()->user()->defaultPaymentMethod();
+
+        $paymentMethods = NULL;
+        $defaultPaymentMethod = NULL;
+        if (!is_null($currentPlan)) {
+            $paymentMethods       = auth()->user()->paymentMethods();
+            $defaultPaymentMethod = auth()->user()->defaultPaymentMethod();
+        }
+
         return view('billing.index', compact('plans', 'currentPlan', 'paymentMethods', 'defaultPaymentMethod'));
     }
 

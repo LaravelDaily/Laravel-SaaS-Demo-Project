@@ -15,6 +15,9 @@
                     @if (is_null($currentPlan))
                         You are now on Free Plan. Please choose plan to upgrade:
                         <br /><br />
+                    @elseif ($currentPlan->trial_ends_at)
+                        <div class="alert alert-info">Your trial will end on {{ $currentPlan->trial_ends_at->toDateString() }} and your card will be charged.</div>
+                        <br /><br />
                     @endif
                     <div class="row">
                         @foreach ($plans as $plan)

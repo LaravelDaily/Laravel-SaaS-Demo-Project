@@ -78,6 +78,10 @@
         </nav>
 
         <main class="py-4">
+            @if (auth()->check() && auth()->user()->trial_ends_at)
+                <div class="alert alert-info text-center">You have {{ now()->diffInDays(auth()->user()->trial_ends_at) }} days of free trial left.
+                    <a href="{{ route('billing') }}">Choose your plan</a> at any time.</div>
+            @endif
             @yield('content')
         </main>
     </div>

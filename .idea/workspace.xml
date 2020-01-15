@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d0abd1f-9fc7-4528-a76a-fa42a05fc4d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Jobs/StripeWebhooks/ChargeSucceededJob.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Jobs/StripeWebhooks/ChargeSucceededJob.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Notifications/ChargeSuccessNotification.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Notifications/ChargeSuccessNotification.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,11 +24,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Jobs/StripeWebhooks/ChargeSucceededJob.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+            <state relative-caret-position="585">
+              <caret line="40" column="49" selection-start-line="40" selection-start-column="49" selection-end-line="40" selection-end-column="49" />
               <folding>
                 <element signature="e#43#91#0#PHP" expanded="true" />
               </folding>
@@ -37,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Notifications/ChargeSuccessNotification.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="535">
-              <caret line="46" selection-start-line="46" selection-end-line="46" />
+            <state relative-caret-position="613">
+              <caret line="46" column="90" selection-start-line="46" selection-start-column="90" selection-end-line="46" selection-end-column="90" />
               <folding>
                 <element signature="e#37#53#0#PHP" expanded="true" />
               </folding>
@@ -100,8 +99,8 @@
         <option value="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_01_13_122353_create_payments_table.php" />
         <option value="$PROJECT_DIR$/app/Payment.php" />
-        <option value="$PROJECT_DIR$/app/Notifications/ChargeSuccessNotification.php" />
         <option value="$PROJECT_DIR$/app/Jobs/StripeWebhooks/ChargeSucceededJob.php" />
+        <option value="$PROJECT_DIR$/app/Notifications/ChargeSuccessNotification.php" />
       </list>
     </option>
   </component>
@@ -301,12 +300,12 @@
       <workItem from="1578826377301" duration="222000" />
       <workItem from="1578915875667" duration="1378000" />
       <workItem from="1579078038965" duration="270000" />
-      <workItem from="1579092236049" duration="283000" />
+      <workItem from="1579092236049" duration="411000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18455000" />
+    <option name="totallyTimeSpent" value="18583000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
@@ -505,22 +504,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Notifications/ChargeSuccessNotification.php">
+    <entry file="file://$PROJECT_DIR$/app/Jobs/StripeWebhooks/ChargeSucceededJob.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
+        <state relative-caret-position="585">
+          <caret line="40" column="49" selection-start-line="40" selection-start-column="49" selection-end-line="40" selection-end-column="49" />
           <folding>
-            <element signature="e#37#53#0#PHP" expanded="true" />
+            <element signature="e#43#91#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Jobs/StripeWebhooks/ChargeSucceededJob.php">
+    <entry file="file://$PROJECT_DIR$/app/Notifications/ChargeSuccessNotification.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+        <state relative-caret-position="613">
+          <caret line="46" column="90" selection-start-line="46" selection-start-column="90" selection-end-line="46" selection-end-column="90" />
           <folding>
-            <element signature="e#43#91#0#PHP" expanded="true" />
+            <element signature="e#37#53#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

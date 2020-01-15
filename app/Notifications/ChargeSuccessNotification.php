@@ -44,7 +44,7 @@ class ChargeSuccessNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('You have been charged $' . number_format($this->payment->total / 100, 2))
+                    ->line('You have been charged $' . number_format($payment->total / 100, 2))
                     ->line('Thank you for using our application!');
     }
 

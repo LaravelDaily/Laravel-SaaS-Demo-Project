@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d0abd1f-9fc7-4528-a76a-fa42a05fc4d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CheckoutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CheckoutController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/billing/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/billing/checkout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Notifications/ChargeSuccessNotification.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Notifications/ChargeSuccessNotification.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,74 +15,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/billing/checkout.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="61" selection-start-line="16" selection-start-column="61" selection-end-line="16" selection-end-column="61" />
+            <state relative-caret-position="435">
+              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CheckoutController.php">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Notifications/ChargeSuccessNotification.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="38" selection-start-line="38" selection-end-line="38" />
+            <state relative-caret-position="613">
+              <caret line="46" selection-start-line="46" selection-end-line="46" />
               <folding>
-                <element signature="e#40#56#0#PHP" expanded="true" />
+                <element signature="e#37#53#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_16_160031_add_billing_to_users_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="20" column="77" selection-start-line="20" selection-start-column="77" selection-end-line="20" selection-end-column="77" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_16_155054_create_countries_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
-              <folding>
-                <element signature="e#23#69#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/seeds/CountriesTableSeeder.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="910" column="13" selection-start-line="910" selection-start-column="13" selection-end-line="910" selection-end-column="13" />
-              <folding>
-                <element signature="e#7#23#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Country.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
@@ -124,7 +70,6 @@
         <option value="$PROJECT_DIR$/database/migrations/2020_01_13_122353_create_payments_table.php" />
         <option value="$PROJECT_DIR$/app/Payment.php" />
         <option value="$PROJECT_DIR$/app/Jobs/StripeWebhooks/ChargeSucceededJob.php" />
-        <option value="$PROJECT_DIR$/app/Notifications/ChargeSuccessNotification.php" />
         <option value="$PROJECT_DIR$/config/logging.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_01_16_155054_create_countries_table.php" />
         <option value="$PROJECT_DIR$/database/seeds/CountriesTableSeeder.php" />
@@ -133,6 +78,7 @@
         <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/CheckoutController.php" />
         <option value="$PROJECT_DIR$/resources/views/billing/checkout.blade.php" />
+        <option value="$PROJECT_DIR$/app/Notifications/ChargeSuccessNotification.php" />
       </list>
     </option>
   </component>
@@ -249,6 +195,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -264,25 +211,13 @@
             <path>
               <item name="saas" type="b2602c69:ProjectViewProjectNode" />
               <item name="saas" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="saas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="saas" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="saas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="saas" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="seeds" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Notifications" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -338,17 +273,18 @@
       <workItem from="1579078038965" duration="270000" />
       <workItem from="1579092236049" duration="1125000" />
       <workItem from="1579185384887" duration="2144000" />
+      <workItem from="1579419993785" duration="88000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21441000" />
+    <option name="totallyTimeSpent" value="21529000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2932761" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29756796" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -534,16 +470,6 @@
     <entry file="file://$PROJECT_DIR$/config/services.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Notifications/ChargeSuccessNotification.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-          <folding>
-            <element signature="e#37#53#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/laravel/cashier/src/Http/Controllers/PaymentController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -586,9 +512,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/billing/checkout.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CheckoutController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+          <folding>
+            <element signature="e#40#56#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_16_160031_add_billing_to_users_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="20" column="77" selection-start-line="20" selection-start-column="77" selection-end-line="20" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_16_155054_create_countries_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="e#23#69#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/database/seeds/CountriesTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
+        <state relative-caret-position="13650">
           <caret line="910" column="13" selection-start-line="910" selection-start-column="13" selection-end-line="910" selection-end-column="13" />
           <folding>
             <element signature="e#7#23#0#PHP" expanded="true" />
@@ -603,44 +570,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_16_155054_create_countries_table.php">
+    <entry file="file://$PROJECT_DIR$/app/Notifications/ChargeSuccessNotification.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_16_160031_add_billing_to_users_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="20" column="77" selection-start-line="20" selection-start-column="77" selection-end-line="20" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="613">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
           <folding>
-            <element signature="e#23#69#0#PHP" expanded="true" />
+            <element signature="e#37#53#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CheckoutController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-          <folding>
-            <element signature="e#40#56#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/billing/checkout.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="61" selection-start-line="16" selection-start-column="61" selection-end-line="16" selection-end-column="61" />
         </state>
       </provider>
     </entry>

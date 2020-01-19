@@ -100,6 +100,8 @@
       <path value="$PROJECT_DIR$/vendor/laravel/cashier" />
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-webhook-client" />
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-stripe-webhooks" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-dompdf" />
+      <path value="$PROJECT_DIR$/vendor/laraveldaily/laravel-invoices" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Payment;
 use App\Plan;
 
 class BillingController extends Controller
@@ -18,7 +19,10 @@ class BillingController extends Controller
             $defaultPaymentMethod = auth()->user()->defaultPaymentMethod();
         }
 
-        return view('billing.index', compact('plans', 'currentPlan', 'paymentMethods', 'defaultPaymentMethod'));
+        $payments = Payment::where('user_id', auth()->id())->latest()->get();
+
+        return view('billing.index', compact('plans', 'currentPlan',
+            'paymentMethods', 'defaultPaymentMethod', 'payments'));
     }
 
     public function cancel()
@@ -31,6 +35,16 @@ class BillingController extends Controller
     {
         auth()->user()->subscription('default')->resume();
         return redirect()->route('billing');
+    }
+
+    public function downloadInvoice($paymentId) {
+        $payment = Payment::where('user_id', auth()->id())->where('id', $paymentId)->firstOrFail();
+        $filename = storage_path('app/invoices/' . $payment->id . '.pdf');
+        if (!file_exists($filename)) {
+            abort(404);
+        }
+
+        return response()->download($filename);
     }
 
 }

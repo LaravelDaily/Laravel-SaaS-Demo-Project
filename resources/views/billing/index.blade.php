@@ -74,11 +74,38 @@
                         @endforeach
                         </tbody>
                     </table>
-                    <br />
                     <a href="{{ route('payment-methods.create') }}" class="btn btn-primary">Add Payment Method</a>
                 </div>
             </div>
             @endif
+
+            <br />
+            <div class="card">
+                <div class="card-header">Payment History</div>
+
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Payment Date</th>
+                            <th>Amount</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach ($payments as $payment)
+                            <tr>
+                                <td>{{ $payment->created_at }}</td>
+                                <td>${{ number_format($payment->total / 100, 2) }}</td>
+                                <td>
+                                    <a href="{{ route('invoices.download', $payment->id) }}" class="btn btn-sm btn-primary">Download invoice</a>
+                                </td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 </div>

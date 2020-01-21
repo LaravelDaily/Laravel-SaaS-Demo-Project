@@ -28,6 +28,9 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::get('payment-methods/default/{paymentMethod}', 'PaymentMethodController@markDefault')->name('payment-methods.markDefault');
     Route::resource('payment-methods', 'PaymentMethodController');
+    Route::get('invoices/download/{paymentId}', 'BillingController@downloadInvoice')->name('invoices.download');
+
+    Route::resource('tasks', 'TaskController');
 });
 
 Route::stripeWebhooks('stripe-webhook');

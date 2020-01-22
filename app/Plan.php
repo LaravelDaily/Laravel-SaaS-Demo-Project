@@ -10,7 +10,7 @@ class Plan extends Model
 
     public function features()
     {
-        return $this->belongsToMany(Feature::class);
+        return $this->belongsToMany(Feature::class)->withPivot(['max_amount']);
     }
 
 }

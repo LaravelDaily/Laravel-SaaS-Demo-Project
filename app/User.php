@@ -40,4 +40,8 @@ class User extends Authenticatable
     ];
 
     protected $dates = ['trial_ends_at'];
+
+    public function tasks(){
+        return $this->hasMany(Task::class);
+    }
 }

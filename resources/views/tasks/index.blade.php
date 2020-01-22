@@ -8,7 +8,11 @@
                     <div class="card-header">My Tasks</div>
 
                     <div class="card-body">
-                        <a href="{{ route('tasks.create') }}" class="btn btn-primary">Add new task</a>
+                        @can('tasks_create')
+                            <a href="{{ route('tasks.create') }}" class="btn btn-primary">Add new task</a>
+                        @else
+                            You have reached the limit of your plan. Please <a href="{{ route('billing') }}">Upgrade your plan</a>.
+                        @endcan
                         <br /><br />
                         <table class="table">
                             <thead>

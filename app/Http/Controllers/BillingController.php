@@ -9,7 +9,8 @@ class BillingController extends Controller
 {
     public function index()
     {
-        $plans = Plan::all();
+        $monthlyPlans = Plan::where('billing_period', 'monthly')->get();
+        $yearlyPlans = Plan::where('billing_period', 'yearly')->get();
         $currentPlan = auth()->user()->subscription('default') ?? NULL;
 
         $paymentMethods = NULL;
@@ -21,7 +22,7 @@ class BillingController extends Controller
 
         $payments = Payment::where('user_id', auth()->id())->latest()->get();
 
-        return view('billing.index', compact('plans', 'currentPlan',
+        return view('billing.index', compact('monthlyPlans', 'yearlyPlans', 'currentPlan',
             'paymentMethods', 'defaultPaymentMethod', 'payments'));
     }
 

@@ -18,11 +18,12 @@ class AuthGates
     public function handle($request, Closure $next)
     {
         if (auth()->check()) {
+            $parent_user_id = auth()->user()->user_id ?? auth()->id();
             $userFeatures = Feature::select('features.name', 'feature_plan.max_amount')
                 ->join('feature_plan', 'feature_plan.feature_id', '=', 'features.id')
                 ->join('plans', 'feature_plan.plan_id', '=', 'plans.id')
                 ->join('subscriptions', 'plans.stripe_plan_id', '=', 'subscriptions.stripe_plan')
-                ->where('subscriptions.user_id', auth()->id())
+                ->where('subscriptions.user_id', $parent_user_id)
                 ->where(function($query) {
                     return $query->whereNull('subscriptions.ends_at')
                         ->orWhere('subscriptions.ends_at', '>', now()->toDateTimeString());

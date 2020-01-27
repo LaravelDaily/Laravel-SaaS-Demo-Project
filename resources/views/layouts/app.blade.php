@@ -50,6 +50,11 @@
                                 </li>
                             @endif
                         @else
+                            @if (!auth()->user()->parent_user_id)
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('members.index') }}">My Team</a>
+                                </li>
+                            @endif
                             @can('tasks')
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('tasks.index') }}">My Tasks</a>

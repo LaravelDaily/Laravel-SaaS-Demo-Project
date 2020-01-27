@@ -31,6 +31,10 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('invoices/download/{paymentId}', 'BillingController@downloadInvoice')->name('invoices.download');
 
     Route::resource('tasks', 'TaskController');
+    Route::resource('members', 'MembersController');
 });
+
+Route::get('invitation/{invitation_token}', 'Auth\RegisterController@invitation')->name('invitation');
+Route::post('invitation_confirm', 'Auth\RegisterController@confirmInvitation')->name('invitation.confirm');
 
 Route::stripeWebhooks('stripe-webhook');

@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\MemberConfirmInviteRequest;
 use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -71,4 +73,25 @@ class RegisterController extends Controller
             'trial_ends_at' => now()->addDays(10)->toDateTimeString(),
         ]);
     }
+
+    public function invitation($invitation_token) {
+        $user = User::where('invitation_token', $invitation_token)->firstOrFail();
+
+        return view('auth.invitation', compact('user'));
+    }
+
+    public function confirmInvitation(MemberConfirmInviteRequest $request) {
+        $user = User::where('invitation_token', $request->input('invitation_token'))->firstOrFail();
+
+        $user->update([
+            'name' => $request->input('name'),
+            'password' => bcrypt($request->input('password')),
+            'invitation_token' => NULL
+        ]);
+
+        auth()->loginUsingId($user->id);
+
+        return redirect()->route('home');
+    }
+
 }

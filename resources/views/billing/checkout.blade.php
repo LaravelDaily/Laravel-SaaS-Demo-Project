@@ -126,6 +126,7 @@
 
         let paymentMethod = null
         $('#checkout-form').on('submit', function (e) {
+          $('#card-button').prop('disabled',true);
           if (paymentMethod) {
             return true
           }

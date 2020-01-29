@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Country;
 use App\Plan;
 use Illuminate\Http\Request;
+use Stripe\Coupon;
+use Stripe\Stripe;
 
 class CheckoutController extends Controller
 {
@@ -28,6 +30,7 @@ class CheckoutController extends Controller
         $plan = Plan::findOrFail($request->input('billing_plan_id'));
         try {
             auth()->user()->newSubscription('default', $plan->stripe_plan_id)
+                ->withCoupon($request->input('coupon'))
                 ->create($request->input('payment-method'));
             auth()->user()->update([
                 'trial_ends_at' => NULL,
@@ -44,4 +47,16 @@ class CheckoutController extends Controller
         }
 
     }
+
+    public function checkCoupon(Request $request) {
+        try {
+            Stripe::setApiKey(env('STRIPE_SECRET'));
+            $coupon = Coupon::retrieve($request->input('coupon_code'));
+        } catch (\Exception $ex) {
+            return response()->json(['error_text' => 'Coupon not found']);
+        }
+
+        return $coupon;
+    }
+
 }

@@ -8,7 +8,8 @@
                 <div class="card-header">Subscribe to {{ $plan->name }}</div>
 
                 <form action="{{ route('checkout.process') }}" method="POST" id="checkout-form">
-                    <input type="hidden" id="plan-paying-amount" value="{{ number_format($plan->price / 100, 2) }}" />
+                    <input type="hidden" id="plan-paying-amount" value="{{ number_format($subtotal / 100, 2) }}" />
+                    <input type="hidden" id="tax-percent" value="{{ $taxPercent }}" />
 
                 <div class="card-body">
                     <div class="row">
@@ -85,8 +86,18 @@
 
                                 <br />
 
+                                Subtotal:
+                                <span class="font-weight-bold" id="amount_subtotal">${{ number_format($subtotal / 100, 2) }}</span>
+                                <br />
+                                Tax ({{ $taxPercent }}%):
+                                <span class="font-weight-bold" id="amount_taxes">${{ number_format($taxAmount / 100, 2) }}</span>
+                                <br />
+                                Total:
+                                <span class="font-weight-bold" id="amount_total">${{ number_format($total / 100, 2) }}</span>
+                                <hr />
+
                                 <button id="card-button" class="btn btn-primary">
-                                    Pay ${{ number_format($plan->price / 100, 2) }}
+                                    Pay ${{ number_format($total / 100, 2) }}
                                 </button>
 
                         </div>
@@ -163,8 +174,14 @@
             } else {
               $('#coupon-text').text(result.name);
               let plan_paying_amount = parseFloat($('#plan-paying-amount').val());
-              let pay_amount = plan_paying_amount - plan_paying_amount * parseFloat(result.percent_off) / 100;
-              $('#card-button').text('Pay $' + pay_amount.toFixed(2));
+              let tax_percent = $('#tax-percent').val();
+              let pay_amount = (plan_paying_amount * (1 - parseFloat(result.percent_off) / 100)).toFixed(2);
+              $('#amount_subtotal').text('$' + pay_amount);
+              let tax_amount = (pay_amount * tax_percent / 100).toFixed(2);
+              $('#amount_taxes').text('$' + tax_amount);
+              pay_amount = (parseFloat(pay_amount) + parseFloat(tax_amount)).toFixed(2);
+              $('#amount_total').text('$' + pay_amount);
+              $('#card-button').text('Pay $' + pay_amount);
             }
           })
         })

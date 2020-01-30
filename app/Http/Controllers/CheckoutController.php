@@ -21,8 +21,14 @@ class CheckoutController extends Controller
             return redirect()->route('billing');
         }
 
+        $subtotal = $plan->price;
+        $taxPercent = auth()->user()->taxPercentage();
+        $taxAmount = round($subtotal * $taxPercent / 100);
+        $total = $subtotal + $taxAmount;
+
         $intent = auth()->user()->createSetupIntent();
-        return view('billing.checkout', compact('plan', 'intent', 'countries'));
+        return view('billing.checkout', compact('plan', 'intent', 'countries',
+            'subtotal', 'taxPercent', 'taxAmount', 'total'));
     }
 
     public function processCheckout(Request $request)
@@ -45,7 +51,6 @@ class CheckoutController extends Controller
         } catch (\Exception $e) {
             return redirect()->back()->withError($e->getMessage());
         }
-
     }
 
     public function checkCoupon(Request $request) {

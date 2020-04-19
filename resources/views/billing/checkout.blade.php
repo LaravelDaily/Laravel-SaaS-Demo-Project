@@ -172,7 +172,11 @@
             let plan_paying_amount = $('#plan-paying-amount').val();
             if (result.error_text) {
               $('#coupon-text').text(result.error_text);
-              $('#card-button').text('Pay $' + plan_paying_amount);
+              let tax_percent = $('#tax-percent').val();
+              let pay_amount = (plan_paying_amount * (1 - result.percent_off / 100)).toFixed(2);
+              let tax_amount = (pay_amount * tax_percent / 100).toFixed(2);
+              pay_amount = (pay_amount + tax_amount).toFixed(2);
+              $('#card-button').text('Pay $' + pay_amount);
             } else {
               $('#coupon-text').text(result.name);
               let tax_percent = $('#tax-percent').val();

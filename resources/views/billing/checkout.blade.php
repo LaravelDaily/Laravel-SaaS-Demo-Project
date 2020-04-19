@@ -175,6 +175,15 @@
           }).done(function(result) {
             if (result.error_text) {
               $('#coupon-text').text(result.error_text);
+              let plan_paying_amount = parseFloat($('#plan-paying-amount').val());
+              let tax_percent = $('#tax-percent').val();
+              let pay_amount = plan_paying_amount;
+              $('#amount_subtotal').text('$' + pay_amount);
+              let tax_amount = (pay_amount * tax_percent / 100).toFixed(2);
+              $('#amount_taxes').text('$' + tax_amount);
+              pay_amount = (parseFloat(pay_amount) + parseFloat(tax_amount)).toFixed(2);
+              $('#amount_total').text('$' + pay_amount);
+              $('#card-button').text('Pay $' + pay_amount);
             } else {
               $('#coupon-text').text(result.name);
               let plan_paying_amount = parseFloat($('#plan-paying-amount').val());

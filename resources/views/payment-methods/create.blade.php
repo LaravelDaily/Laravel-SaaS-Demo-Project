@@ -72,12 +72,16 @@
           if (paymentMethod) {
             return true
           }
+          var card_holder_name = $('#card-holder-name').val();
+          if (card_holder_name == null || card_holder_name == "" || card_holder_name == undefined) {
+            return false
+          }
           stripe.confirmCardSetup(
             "{{ $intent->client_secret }}",
             {
               payment_method: {
                 card: card,
-                billing_details: {name: $('#card-holder-name').val()}
+                billing_details: {name: card_holder_name }
               }
             }
           ).then(function (result) {

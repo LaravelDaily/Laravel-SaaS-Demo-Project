@@ -141,12 +141,16 @@
           if (paymentMethod) {
             return true
           }
+          var card_holder_name = $('#card-holder-name').val();
+          if (card_holder_name == null || card_holder_name == "" || card_holder_name == undefined) {
+            return false
+          }
           stripe.confirmCardSetup(
             "{{ $intent->client_secret }}",
             {
               payment_method: {
                 card: card,
-                billing_details: {name: $('#card-holder-name').val()}
+                billing_details: {name: card_holder_name }
               }
             }
           ).then(function (result) {
@@ -172,7 +176,7 @@
             let plan_paying_amount = $('#plan-paying-amount').val();
             if (result.error_text) {
               $('#coupon-text').text(result.error_text);
-              $('#card-button').text('Pay $' + plan_paying_amount);
+
             } else {
               $('#coupon-text').text(result.name);
               let tax_percent = $('#tax-percent').val();
